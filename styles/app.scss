@@ -1,6 +1,74 @@
 // @import 'yoga-sass/assets/yoga';
-// @import 'normalize-css/normalize';
+@import 'normalize-css/normalize';
 
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
+
+$c-card: #00b2ff;
+
+img {
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.section {
+  padding: 5rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 65rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.grid__item {
+  width: calc(100% / 3 - 4rem);
+  margin: 2rem;
+}
+
+@import 'shop-card';
+
+.button-bar {
+  border-top: $c-card 0.3rem solid;
+  display: flex;
+  justify-content: space-between;
+  height: 2.5rem;
+
+  & > * + * {
+    border-left: $c-card 0.3rem solid;
+  }
+
+  &__button {
+    flex-grow: 1;
+    color: $c-card;
+  }
+
+  &__button:hover {
+    background: $c-card;
+    color: #fff;
+  }
+}
+
+.dropdown__list {
+  display: none;
+
+}
+
+.dropdown:hover {
+  & > * {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
