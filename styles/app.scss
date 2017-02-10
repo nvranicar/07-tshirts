@@ -16,6 +16,11 @@ button {
   border: none;
 }
 
+ul {
+  margin-left: 0;
+  list-style: none;
+}
+
 .section {
   padding: 5rem;
 }
@@ -36,7 +41,6 @@ button {
   width: calc(100% / 3 - 4rem);
   margin: 2rem;
 }
-
 @import 'shop-card';
 
 .button-bar {
@@ -60,15 +64,55 @@ button {
   }
 }
 
-.dropdown__list {
-  display: none;
+.dropdown {
+  position: relative;
 
-}
+  &__list {
+    display: none;
+    margin: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-72.5%);
 
-.dropdown:hover {
-  & > * {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
+  }
+
+  &__button {
+    padding: 0.5rem;
+    border: $c-card 0.3rem solid;
+    margin: 0;
+    background:#fff;
+    width: 3rem;
+    color: $c-card;
+
+    &:hover {
+      width: 3.2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__button--pink {
+    color: #fe2ab8;
+  }
+
+  &__button--blue {
+    color: #00d1ff;
+  }
+
+  &__button--green {
+    color: #00ff0a;
+  }
+
+  &__button--yellow {
+    color: #ffd600;
+  }
+
+  &:hover {
+    & > * {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
   }
 }
