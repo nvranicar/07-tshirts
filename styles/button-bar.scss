@@ -1,0 +1,20 @@
+.button-bar {
+  border-top: $c-card 0.3rem solid;
+  display: flex;
+  justify-content: space-between;
+  height: 2.5rem;
+
+  & > * + * {
+    border-left: $c-card 0.3rem solid;
+  }
+
+  &__button {
+    flex-grow: 1;
+    color: $c-card;
+  }
+
+  &__button:hover {
+    background: $c-card;
+    color: #fff;
+  }
+}

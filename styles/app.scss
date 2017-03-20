@@ -1,6 +1,84 @@
 // @import 'yoga-sass/assets/yoga';
-// @import 'normalize-css/normalize';
+@import 'normalize-css/normalize';
 
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
+
+$c-card: #00b2ff;
+
+img {
+  max-width: 100%;
+  align-self: center;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.section {
+  padding: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 65rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.grid__item {
+  flex-basis: calc(100% / 3 - 4rem);
+  flex-grow: 1;
+  margin: 2rem;
+  min-width: 12rem;
+}
+@import 'shop-card';
+
+@import 'button-bar';
+
+@import 'dropdown';
+
+
+@media (min-width: 460px) and (max-width: 760px) {
+  .grid {
+    flex-direction: column;
+
+    &__item {
+      min-width: 8rem;
+    }
+  }
+
+  .shop-card {
+    flex-direction: row;
+    max-height: 10rem;
+
+    &__pic {
+      // height: 3rem;
+      max-width: 25%;
+    }
+  }
+
+  .button-bar {
+    flex-direction: column;
+    height: 100%;
+    border-left: $c-card 0.3rem solid;
+    border-top: none;
+
+    & > * + * {
+      border-top: $c-card 0.3rem solid;
+      border-left: none;
+    }
+  }
+}
